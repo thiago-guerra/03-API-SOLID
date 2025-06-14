@@ -1,4 +1,4 @@
-import verifyJWT from "@http/middlewares/verify-jwt";
+import verifyJWT from "@/http/middlewares/verify-jwt";
 import { FastifyInstance } from "fastify";
 import { checkIns } from "./check-ins-controller";
 import { checkInsHistory } from "./check-ins-history-controller";

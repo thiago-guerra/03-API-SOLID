@@ -7,11 +7,11 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            "@services": path.resolve(__dirname, './src/services'),
-            "@repositories": path.resolve(__dirname, './src/repositories'),
-            "@utils": path.resolve(__dirname, './src/utils'),
-            "@lib": path.resolve(__dirname, './src/lib'),
-            "@http": path.resolve(__dirname, './src/http'),
+            "@/services": path.resolve(__dirname, './src/services'),
+            "@/repositories": path.resolve(__dirname, './src/repositories'),
+            "@/utils": path.resolve(__dirname, './src/utils'),
+            "@/lib": path.resolve(__dirname, './src/lib'),
+            "@/http": path.resolve(__dirname, './src/http'),
             "@/app": path.resolve(__dirname, './src/app'),
         }
     }

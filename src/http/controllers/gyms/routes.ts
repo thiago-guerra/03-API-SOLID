@@ -1,4 +1,4 @@
-import verifyJWT from "@http/middlewares/verify-jwt";
+import verifyJWT from "@/http/middlewares/verify-jwt";
 import { FastifyInstance } from "fastify";
 import { createGym } from "./create-gyms-controller";
 import { searchGyms } from "./search-gyms-controller";
