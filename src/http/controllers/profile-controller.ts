@@ -1,4 +1,4 @@
-import { makeGetUserProfileUseCase } from '@/services/factories/make-get-user-profile-use-case';
+import { makeGetUserProfileUseCase } from '@services/factories/make-get-user-profile-use-case';
 import {FastifyRequest, FastifyReply } from 'fastify';
 import verifyJWT from '../middlewares/verify-jwt';
 
