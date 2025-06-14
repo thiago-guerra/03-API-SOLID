@@ -1,6 +1,6 @@
 import { Gym, Prisma } from "@prisma/client";
 import { IGymsRepository } from "../gyms-repository";
-import { prisma } from "@/lib/prisma";
+import { prisma } from "@lib/prisma";
 
 export default class PrismaGymsRepository implements IGymsRepository{
     async findById(id: string): Promise<Gym | null> {

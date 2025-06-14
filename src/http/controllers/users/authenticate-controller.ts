@@ -16,7 +16,7 @@ import { makeAuthenticateUseCase } from "@services/factories/make-authenticate-u
 
        const token = await reply.jwtSign({}, {
             sign: {
-                sub: user.id
+            sub: user.id
             }});
 
         return reply.status(200).send({ token });
