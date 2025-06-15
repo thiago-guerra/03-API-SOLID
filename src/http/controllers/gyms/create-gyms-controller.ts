@@ -7,12 +7,11 @@ import { makeCreateGymUseCase } from "@/services/factories/make-create-gym-use-c
         tittle: z.string(),
         description: z.string().nullable(),
         phone: z.string(),
-        latitude: z.number().refine(value => { return Math.abs(value) <= 90 }),
-        longitude: z.number().refine(value => { return Math.abs(value) <= 180 }),
+        latitude: z.coerce.number().refine(value => { return Math.abs(value) <= 90 }),
+        longitude: z.coerce.number().refine(value => { return Math.abs(value) <= 180 }),
     });
 
     const { tittle, description, phone, latitude, longitude  } = createGymBodySchemma.parse(request.body);
-    
     const createGymUseCase = makeCreateGymUseCase();
     
     await createGymUseCase.execute({

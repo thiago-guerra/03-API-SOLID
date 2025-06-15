@@ -8,7 +8,7 @@ import { makeSearchGymsUseCase } from "@/services/factories/make-search-gyms-use
         page: z.coerce.number().min(1).default(1)
     });
 
-    const { page, q  } = searchGymsBodySchemma.parse(request.body);
+    const { page, q  } = searchGymsBodySchemma.parse(request.query);
     
     const searchGymsUseCase = makeSearchGymsUseCase();
     

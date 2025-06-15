@@ -4,11 +4,11 @@ import { makeFetchNearbyGymsUseCase } from "@/services/factories/make-fetch-near
 
  export async function nearbyGyms (request: FastifyRequest, reply: FastifyReply) {
     const nearbyGymsBodySchemma = z.object({
-        latitude: z.number().refine(value => { return Math.abs(value) <= 90 }),
-        longitude: z.number().refine(value => { return Math.abs(value) <= 180 }),
+      latitude: z.coerce.number().refine(value => { return Math.abs(value) <= 90 }),
+      longitude: z.coerce.number().refine(value => { return Math.abs(value) <= 180 }),
     });
 
-    const { latitude, longitude  } = nearbyGymsBodySchemma.parse(request.body);
+    const { latitude, longitude  } = nearbyGymsBodySchemma.parse(request.query);
     
     const fetchNearbyGyms = makeFetchNearbyGymsUseCase();
     

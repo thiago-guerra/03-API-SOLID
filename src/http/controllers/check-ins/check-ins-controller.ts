@@ -5,8 +5,8 @@ import { makeCheckInUseCase } from "@/services/factories/make-check-in-use-case"
  export async function checkIns (request: FastifyRequest, reply: FastifyReply) {
    
     const checkInBodySchemma = z.object({
-        latitude: z.number().refine(value => { return Math.abs(value) <= 90 }),
-        longitude: z.number().refine(value => { return Math.abs(value) <= 180 }),
+        latitude: z.coerce.number().refine(value => { return Math.abs(value) <= 90 }),
+        longitude: z.coerce.number().refine(value => { return Math.abs(value) <= 180 }),
     });
 
      const gymIdParamsSchemma = z.object({
