@@ -11,9 +11,9 @@ import { makeValidateCheckInUseCase } from "@/services/factories/make-validate-c
     
     const validateCheckInsUseCase = makeValidateCheckInUseCase();
     
-    const { checkIn } = await validateCheckInsUseCase.execute({
+    await validateCheckInsUseCase.execute({
        checkInId
     });
    
-    return reply.status(204).send({ checkIn });
+    return reply.status(204).send();
 }

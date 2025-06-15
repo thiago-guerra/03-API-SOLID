@@ -14,7 +14,7 @@ import { makeCreateGymUseCase } from "@/services/factories/make-create-gym-use-c
     const { tittle, description, phone, latitude, longitude  } = createGymBodySchemma.parse(request.body);
     const createGymUseCase = makeCreateGymUseCase();
     
-    await createGymUseCase.execute({
+    const { gym } = await createGymUseCase.execute({
         tittle,
         description,
         phone,
@@ -22,5 +22,5 @@ import { makeCreateGymUseCase } from "@/services/factories/make-create-gym-use-c
         longitude
     });
    
-    return reply.status(201).send();
+    return reply.status(201).send({ gym });
 }
