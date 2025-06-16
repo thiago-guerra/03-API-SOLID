@@ -14,12 +14,20 @@ import { makeAuthenticateUseCase } from "@/services/factories/make-authenticate-
         const authenticateUseCase = makeAuthenticateUseCase();
         const { user} = await authenticateUseCase.execute({ email, password });
 
-        const token = await reply.jwtSign({}, {
-            sign: {
-            sub: user.id
-        }});
+        const token = await reply.jwtSign(
+            { 
+                role: user.role 
+            },
+            {
+                sign: {
+                    sub: user.id
+                }
+            });
 
-         const refreshToken = await reply.jwtSign({}, {
+         const refreshToken = await reply.jwtSign(
+            {
+                role: user.role
+            }, {
             sign: {
             sub: user.id,
             expiresIn: '7d'

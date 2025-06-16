@@ -14,7 +14,7 @@ describe('Validate CheckIn', () => {
     });
 
     it('should be able to validate check-in', async () => {
-        const { token} = await createAndAuthenticateUser(app);
+        const { token} = await createAndAuthenticateUser(app, true);
 
         const createGymResponse = await request(app.server).post('/gyms')
         .set('Authorization', `Bearer ${token}`)

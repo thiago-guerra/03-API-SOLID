@@ -13,7 +13,7 @@ describe('Create CheckIn', () => {
     });
 
     it('should be able to create check-in', async () => {
-        const { token} = await createAndAuthenticateUser(app);
+        const { token} = await createAndAuthenticateUser(app, true);
 
         const response = await request(app.server).post('/gyms')
         .set('Authorization', `Bearer ${token}`)
