@@ -6,7 +6,7 @@ import { Environment } from "vitest/environments";
 
 const prisma = new PrismaClient();
 
-function generateDataBaseURL(schema: string) {
+function generateURL(schema: string) {
     if (!process.env.DATABASE_URL) {
         throw new Error('Please provide a DATABASE_URL environment variable.');
     }
@@ -21,7 +21,7 @@ export default <Environment> {
     async setup() { 
         console.log('Prisma Test Environment Setup');
         const schema = randomUUID();
-        const databaseURL = generateDataBaseURL(schema);
+        const databaseURL = generateURL(schema);
         console.log(' databaseurl', databaseURL);
         process.env.DATABASE_URL = databaseURL;
 
