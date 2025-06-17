@@ -15,9 +15,15 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-      - run: npm ci
+      - name: Instalar dependências
+        run: npm ci
 
-      - run: npm run test    
+      - name: Criar arquivo .env com DATABASE_URL
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
+      
+      - name: Rodar os testes vitest    
+        run: npm run test    
 
       
 
