@@ -8,8 +8,4 @@ doc
 .env.test
 
 
-# Package Dev
-package-lock.json
 
-# Build App
-dist
