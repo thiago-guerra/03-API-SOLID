@@ -29,7 +29,7 @@ jobs:
         run: npm ci
         
       - name: Rodar os testes vitest    
-        run: npm run tes:e2e
+        run: npm run test:e2e
         env:
           JWT_SECRET: testing
           DATABASE_URL: "postgresql://docker:docker@localhost:5432/apisolid?schema=public"
