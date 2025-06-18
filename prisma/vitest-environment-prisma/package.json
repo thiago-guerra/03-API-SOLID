@@ -1,0 +1,11 @@
+{
+  "name": "vitest-environment-prisma",
+  "version": "1.0.0",
+  "type": "module",            
+  "exports": {
+    "default": "./prisma-test-environment.ts"    
+  },
+  "dependencies": {
+    "@prisma/client": "6.2.1"
+  }
+}
