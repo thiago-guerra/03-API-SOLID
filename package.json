@@ -2,7 +2,6 @@
   "name": "03-api-solid",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test:e2e": "vitest run --dir src/http",
     "test:e2e:watch": "vitest --dir src/http",
